@@ -1,0 +1,4 @@
+common-return
+=============
+
+Provide a container for any method where more than one object needs to be returned.
