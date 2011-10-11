@@ -89,6 +89,13 @@ public class CommonReturn {
 	}
 	
 	/**
+	 * Set the return status to success (true)
+	 */
+	public void setSuccess() {
+		this.returnStatus = Boolean.TRUE;
+	}
+	
+	/**
 	 * Does this return represent a failed call? - Opposite of success().
 	 * 
 	 * @return true failure, false otherwise
@@ -96,6 +103,12 @@ public class CommonReturn {
 	public boolean failure() {
 		return (! success() );
 		
+	}
+	/**
+	 * Set the return status to failure (false)
+	 */
+	public void setFailure() {
+		this.returnStatus = Boolean.FALSE;
 	}
 	
 	/**
