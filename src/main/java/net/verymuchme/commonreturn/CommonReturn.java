@@ -80,12 +80,22 @@ public class CommonReturn {
 	}
 	
 	/**
-	 * Get the returned status - alias for getStatus
+	 * Does this return represent a successful call?
 	 * 
-	 * @return  - true success, false otherwise
+	 * @return true success, false otherwise
 	 */
-	public boolean status() {
+	public boolean success() {
 		return this.getStatus();
+	}
+	
+	/**
+	 * Does this return represent a failed call? - Opposite of success().
+	 * 
+	 * @return true failure, false otherwise
+	 */
+	public boolean failure() {
+		return (! success() );
+		
 	}
 	
 	/**
