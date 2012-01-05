@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * <p>Class to provide common container for complex returned values. No external dependencies</p>
  * 
- * @author tracy
+ * @author tflynn
  */
 public final class CommonReturn<T> {
 	

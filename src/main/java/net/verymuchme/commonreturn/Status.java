@@ -19,28 +19,5 @@ public enum Status {
 		this.enumValue = enumValue;
 	}
 	
-	public String toString() {
-		String stringValue;
-		
-        switch (enumValue) {
-        case 0:
-        	stringValue = "UNDEFINED";
-            break;
-        case 1:
-        	stringValue = "SUCCESS";
-            break;
-        case 2:
-        	stringValue = "FAILURE";
-            break;
-        case 3:
-        	stringValue = "ERROR";
-            break;
-        default:
-        	stringValue = "UNDEFINED";
-            break;
-        }
-        return stringValue;
-    }
-
 }
 

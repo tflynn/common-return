@@ -53,7 +53,6 @@ public class CommonReturnTest extends TestCase {
 		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"", testException.getClass().getName(),returnValue.getThrowable().getClass().getName()),returnValue.getThrowable().equals(testException));
 		Assert.assertTrue(String.format("Expected Status..SUCCESS"),returnValue.getStatus().equals(Status.SUCCESS));
 		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"",errorString,returnValue.getErrorText()),returnValue.getErrorText().equals(errorString));
-		
 	}
 	
 }
