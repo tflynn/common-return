@@ -30,8 +30,12 @@ public final class NullObject<T> {
 		T inst = null;
 		try {
 			inst = klass.newInstance();
-		} catch (InstantiationException e) {
-		} catch (IllegalAccessException e) {
+		} catch (InstantiationException ie) {
+			RuntimeException re = new RuntimeException(String.format("NullObject: unable to instance %s", klass.getName()), ie);
+			throw re;
+		} catch (IllegalAccessException iae) {
+			RuntimeException re = new RuntimeException(String.format("NullObject: unable to instance %s", klass.getName()), iae);
+			throw re;
 		}
 		return inst;
 	}
