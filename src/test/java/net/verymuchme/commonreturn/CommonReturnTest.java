@@ -1,9 +1,5 @@
 package net.verymuchme.commonreturn;
 
-import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.junit.runner.Runner;
-
 import junit.framework.TestCase;
 import junit.framework.Assert;
 

@@ -1,7 +1,5 @@
 package net.verymuchme.commonreturn;
 
-import java.io.IOException;
-
 
 /**
  * <p>Class to provide common container for complex returned values. No external dependencies</p>
