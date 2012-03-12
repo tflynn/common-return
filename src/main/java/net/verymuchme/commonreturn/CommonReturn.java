@@ -46,6 +46,20 @@ public final class CommonReturn<T> {
 		this.errorText = errorText;
 	}
 	
+	public CommonReturn(T valueObject, Status status) {
+		this.valueObject = valueObject;
+		this.throwable = NULL_THROWABLE;
+		this.status = status;
+		this.errorText = NULL_STRING;
+	}
+
+	public CommonReturn(T valueObject, Status status, String errorText) {
+		this.valueObject = valueObject;
+		this.throwable = NULL_THROWABLE;
+		this.status = status;
+		this.errorText = errorText;
+	}
+	
 	public T getValue() {
 		return this.valueObject;
 	}
