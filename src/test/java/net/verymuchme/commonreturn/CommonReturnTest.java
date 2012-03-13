@@ -30,6 +30,16 @@ public class CommonReturnTest extends TestCase {
 		Assert.assertTrue(String.format("Expected a NULL_STRING"),returnValue.getErrorText().equals(CommonReturn.NULL_STRING));
 	}
 
+	
+	public void testTwoArgumentConstructorVariant1() {
+		String commonReturnInitializationValue = "Another slightly odd value";
+		CommonReturn<String> returnValue = new CommonReturn<String>(commonReturnInitializationValue,Status.SUCCESS);
+		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"",commonReturnInitializationValue, returnValue.getValue()), commonReturnInitializationValue.equals(returnValue.getValue()));
+		Assert.assertTrue(String.format("Expected a NULL_THROWABLE"),returnValue.getThrowable().equals(CommonReturn.NULL_THROWABLE));
+		Assert.assertTrue(String.format("Expected Status..SUCCESS"),returnValue.getStatus().equals(Status.SUCCESS));
+		Assert.assertTrue(String.format("Expected a NULL_STRING"),returnValue.getErrorText().equals(CommonReturn.NULL_STRING));
+	}
+	
 	public void testThreeArgumentConstructor() {
 		String commonReturnInitializationValue = "Yet another odd value";
 		Exception testException = new Exception();
@@ -38,6 +48,16 @@ public class CommonReturnTest extends TestCase {
 		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"", testException.getClass().getName(),returnValue.getThrowable().getClass().getName()),returnValue.getThrowable().equals(testException));
 		Assert.assertTrue(String.format("Expected Status.FAILURE"),returnValue.getStatus().equals(Status.FAILURE));
 		Assert.assertTrue(String.format("Expected a NULL_STRING"),returnValue.getErrorText().equals(CommonReturn.NULL_STRING));
+	}
+	
+	public void testThreeArgumentConstructorVariant1() {
+		String commonReturnInitializationValue = "Yet another even value";
+		String errorString = "An error string"; 
+		CommonReturn<String> returnValue = new CommonReturn<String>(commonReturnInitializationValue,Status.FAILURE,errorString);
+		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"",commonReturnInitializationValue, returnValue.getValue()), commonReturnInitializationValue.equals(returnValue.getValue()));
+		Assert.assertTrue(String.format("Expected a NULL_THROWABLE"),returnValue.getThrowable().equals(CommonReturn.NULL_THROWABLE));
+		Assert.assertTrue(String.format("Expected Status.FAILURE"),returnValue.getStatus().equals(Status.FAILURE));
+		Assert.assertTrue(String.format("Expected \"%s\" actual \"%s\"",errorString,returnValue.getErrorText()),returnValue.getErrorText().equals(errorString));
 	}
 	
 	public void testFourArgumentConstructor() {
